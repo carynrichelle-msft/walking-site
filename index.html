@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Caryn Allen · Sr. CSAM, Microsoft</title>
+<meta name="description" content="Caryn Allen, Sr. Customer Success Account Manager at Microsoft. I build the systems that make complexity feel manageable."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#16121f;--bg2:#1d1828;--surface:#221c30;--surface-2:#2a2238;
+  --ink:#ebe4f5;--mute:#9b8eb5;--soft:#6b5f87;--rule:#322a45;--rule-strong:#443a5c;
+  --accent:#b794f4;--accent-warm:#c9aaff;--accent-soft:rgba(183,148,244,0.14);--accent-glow:rgba(183,148,244,0.32);
+  --rose:#e8849c;--teal:#7dd3c0;--orchid:#d4a5e8;
+}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:'Inter',-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;letter-spacing:-0.005em}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
+.mono{font-family:'JetBrains Mono',ui-monospace,Consolas,monospace}
+em{font-style:italic;color:var(--accent-warm);font-weight:400}
+
+body::before{content:"";position:fixed;inset:0;background:
+  radial-gradient(ellipse 70% 50% at 15% 10%,rgba(183,148,244,0.10),transparent 60%),
+  radial-gradient(ellipse 60% 40% at 90% 80%,rgba(232,132,156,0.07),transparent 65%),
+  radial-gradient(ellipse 50% 40% at 50% 50%,rgba(125,211,192,0.04),transparent 70%);
+  pointer-events:none;z-index:0}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(22,18,31,0.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule);padding:18px 36px;display:flex;justify-content:space-between;align-items:center}
+nav .brand{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:600}
+nav .brand .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--accent) 0%,var(--rose) 100%);color:#16121f;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;letter-spacing:0.02em;box-shadow:0 4px 14px var(--accent-glow)}
+nav .brand .name{font-family:'Instrument Serif',Georgia,serif;font-size:18px;letter-spacing:-0.01em}
+nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:4px;background:var(--surface);border:1px solid var(--rule);border-radius:999px}
+nav a{color:var(--mute);text-decoration:none;font-size:13px;font-weight:500;padding:8px 16px;border-radius:999px;transition:all 0.15s}
+nav a:hover{background:var(--surface-2);color:var(--ink)}
+nav a.active{background:var(--accent-soft);color:var(--accent-warm)}
+nav .status{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--mute);font-family:'JetBrains Mono',monospace}
+nav .status .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent-glow);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.55;transform:scale(0.85)}}
+
+/* Hero */
+.hero{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:80px 36px 60px;display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:center}
+.greet{display:inline-flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--rule);padding:8px 16px;border-radius:999px;font-size:13px;color:var(--mute);margin-bottom:32px}
+.greet .wave{font-size:16px;filter:saturate(1.2);color:var(--accent-warm)}
+.greet b{color:var(--ink);font-weight:500}
+h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(2.8rem,6vw,5rem);line-height:1.02;letter-spacing:-0.02em;margin:0 0 28px;color:var(--ink)}
+.sub{font-size:1.15rem;color:var(--mute);max-width:48ch;margin:0 0 36px;line-height:1.65}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn-primary{background:linear-gradient(135deg,var(--accent) 0%,var(--accent-warm) 100%);color:#16121f;padding:14px 24px;border-radius:12px;text-decoration:none;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 20px var(--accent-glow);transition:transform 0.15s}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);padding:14px 22px;border-radius:12px;text-decoration:none;font-size:14px;font-weight:500;border:1px solid var(--rule-strong);display:inline-flex;align-items:center;gap:8px;transition:all 0.15s}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent-warm)}
+
+.card-stack{position:relative;height:380px}
+.card-stack .card{position:absolute;background:var(--surface);border:1px solid var(--rule-strong);border-radius:18px;padding:22px;box-shadow:0 16px 40px rgba(0,0,0,0.4);width:280px}
+.card-stack .c1{top:0;right:60px;transform:rotate(-3deg);background:linear-gradient(180deg,rgba(183,148,244,0.08),var(--surface))}
+.card-stack .c2{top:100px;right:0;transform:rotate(2.5deg);background:linear-gradient(180deg,rgba(232,132,156,0.07),var(--surface))}
+.card-stack .c3{top:210px;right:60px;transform:rotate(-1.5deg);background:linear-gradient(180deg,rgba(125,211,192,0.06),var(--surface))}
+.card .icon-circle{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:10px}
+.card.c1 .icon-circle{background:var(--accent-soft);color:var(--accent-warm);border:1px solid rgba(183,148,244,0.25)}
+.card.c2 .icon-circle{background:rgba(232,132,156,0.12);color:var(--rose);border:1px solid rgba(232,132,156,0.25)}
+.card.c3 .icon-circle{background:rgba(125,211,192,0.12);color:var(--teal);border:1px solid rgba(125,211,192,0.25)}
+.card .ttl{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:1.15rem;margin-bottom:4px;color:var(--ink);letter-spacing:-0.005em}
+.card .desc{font-size:13px;color:var(--mute);line-height:1.5}
+
+/* Stats */
+.stat-row{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 36px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:14px;overflow:hidden}
+.stat{background:var(--bg2);padding:22px 24px}
+.stat .num{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:2.2rem;color:var(--ink);letter-spacing:-0.02em;line-height:1}
+.stat .num .unit{color:var(--accent-warm);font-size:1rem;margin-left:2px;font-style:italic}
+.stat .lbl{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--soft);text-transform:uppercase;letter-spacing:0.14em;margin-top:8px}
+
+/* Section common */
+section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:100px 36px 40px}
+.section-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent-warm);font-weight:500;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.18em;display:flex;align-items:center;gap:10px}
+.section-eyebrow::before{content:"";width:24px;height:1px;background:var(--accent)}
+h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(2rem,3.8vw,3.2rem);line-height:1.08;letter-spacing:-0.015em;margin:0 0 56px;max-width:22ch;color:var(--ink)}
+
+/* About / Story */
+.story-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:start}
+.story-prose p{font-size:1.05rem;color:var(--mute);margin:0 0 22px;line-height:1.75}
+.story-prose p.lede{font-family:'Instrument Serif',Georgia,serif;font-size:1.5rem;color:var(--ink);line-height:1.45;margin-bottom:32px;letter-spacing:-0.005em}
+.story-prose p strong{color:var(--ink);font-weight:500}
+.story-prose blockquote{margin:32px 0;padding:0 0 0 24px;border-left:2px solid var(--accent);font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:1.35rem;color:var(--accent-warm);line-height:1.45}
+.pillars{display:flex;flex-direction:column;gap:14px;position:sticky;top:120px}
+.pillar{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:20px;display:flex;gap:14px;align-items:flex-start;transition:all 0.15s}
+.pillar:hover{border-color:var(--rule-strong);background:var(--surface-2)}
+.pillar .glyph{font-size:18px;width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pillar.p1 .glyph{background:var(--accent-soft);color:var(--accent-warm);border:1px solid rgba(183,148,244,0.25)}
+.pillar.p2 .glyph{background:rgba(232,132,156,0.12);color:var(--rose);border:1px solid rgba(232,132,156,0.25)}
+.pillar.p3 .glyph{background:rgba(125,211,192,0.12);color:var(--teal);border:1px solid rgba(125,211,192,0.25)}
+.pillar .t{font-family:'Instrument Serif',Georgia,serif;font-size:1.1rem;color:var(--ink);margin-bottom:4px;letter-spacing:-0.005em}
+.pillar .d{font-size:13px;color:var(--mute);line-height:1.5}
+
+/* Journey */
+.journey-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.role{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:22px;position:relative;transition:all 0.2s}
+.role:hover{border-color:var(--rule-strong);background:var(--surface-2);transform:translateY(-2px)}
+.role .when{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--soft);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:14px}
+.role .co{font-family:'Instrument Serif',Georgia,serif;font-size:1.25rem;color:var(--ink);margin-bottom:4px;letter-spacing:-0.005em;line-height:1.2}
+.role .title{font-size:13px;color:var(--mute);line-height:1.45}
+.role.now{border-color:var(--accent);background:linear-gradient(180deg,rgba(183,148,244,0.08),var(--surface))}
+.role.now .when{color:var(--accent-warm)}
+.role.now::after{content:"NOW";position:absolute;top:14px;right:14px;font-family:'JetBrains Mono',monospace;font-size:9px;color:#16121f;background:var(--accent);padding:3px 8px;border-radius:6px;letter-spacing:0.12em;font-weight:500}
+.role.next{border-style:dashed;background:transparent}
+.role.next .when{color:var(--orchid)}
+.role.next .co{color:var(--orchid)}
+.role.next::after{content:"NEXT";position:absolute;top:14px;right:14px;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--orchid);border:1px solid var(--orchid);padding:2px 8px;border-radius:6px;letter-spacing:0.12em}
+
+/* Work / Practice 3-card */
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.work-card{background:var(--surface);border:1px solid var(--rule);border-radius:18px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;transition:all 0.2s;position:relative;overflow:hidden}
+.work-card:hover{transform:translateY(-3px);border-color:var(--rule-strong);background:var(--surface-2)}
+.work-card::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 100% 60% at 50% 0%,var(--accent-soft),transparent 60%);opacity:0;transition:opacity 0.2s;pointer-events:none}
+.work-card:hover::before{opacity:1}
+.work-card .icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;position:relative;z-index:1}
+.work-card.c1 .icon{background:var(--accent-soft);color:var(--accent-warm);border:1px solid rgba(183,148,244,0.25)}
+.work-card.c2 .icon{background:rgba(232,132,156,0.12);color:var(--rose);border:1px solid rgba(232,132,156,0.25)}
+.work-card.c3 .icon{background:rgba(125,211,192,0.12);color:var(--teal);border:1px solid rgba(125,211,192,0.25)}
+.work-card h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:1.4rem;margin:0;color:var(--ink);letter-spacing:-0.005em;position:relative;z-index:1}
+.work-card p{font-size:14px;color:var(--mute);line-height:1.65;margin:0;position:relative;z-index:1}
+.work-card .tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--soft);text-transform:uppercase;letter-spacing:0.14em;padding-top:8px;border-top:1px solid var(--rule);margin-top:auto;position:relative;z-index:1}
+
+/* Superpowers 4-card */
+.super-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.super-card{background:var(--surface);border:1px solid var(--rule);border-radius:18px;padding:30px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:flex-start;transition:all 0.2s}
+.super-card:hover{border-color:var(--rule-strong);background:var(--surface-2)}
+.super-card .num{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:2.4rem;color:var(--accent-warm);line-height:1;width:48px}
+.super-card h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:1.3rem;margin:0 0 10px;color:var(--ink);letter-spacing:-0.005em}
+.super-card p{font-size:14px;color:var(--mute);line-height:1.65;margin:0}
+
+/* Impact */
+.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.impact-card{background:var(--surface);border:1px solid var(--rule);border-radius:18px;padding:30px;display:flex;flex-direction:column;gap:14px;transition:all 0.2s;position:relative;overflow:hidden}
+.impact-card:hover{transform:translateY(-3px);border-color:var(--rule-strong);background:var(--surface-2)}
+.impact-card .tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent-warm);text-transform:uppercase;letter-spacing:0.18em;display:flex;align-items:center;gap:8px}
+.impact-card .tag::before{content:"";width:18px;height:1px;background:var(--accent)}
+.impact-card h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:1.3rem;margin:0;color:var(--ink);letter-spacing:-0.005em;line-height:1.25}
+.impact-card p{font-size:14px;color:var(--mute);line-height:1.65;margin:0}
+
+/* Where I'm Headed */
+.headed-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:32px}
+.headed-card{background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%);border:1px solid var(--rule-strong);border-radius:18px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;position:relative}
+.headed-card .step{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:2.6rem;color:var(--accent-warm);line-height:1}
+.headed-card h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:1.25rem;margin:0;color:var(--ink);letter-spacing:-0.005em;line-height:1.25}
+.headed-card p{font-size:14px;color:var(--mute);line-height:1.65;margin:0}
+.seeking{background:var(--surface);border:1px solid var(--accent);border-radius:18px;padding:28px 32px;display:flex;gap:20px;align-items:flex-start;box-shadow:0 8px 30px rgba(183,148,244,0.12)}
+.seeking .glyph{font-size:22px;width:44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent-warm);border:1px solid rgba(183,148,244,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.seeking .ttl{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent-warm);text-transform:uppercase;letter-spacing:0.18em;margin-bottom:6px}
+.seeking .txt{font-family:'Instrument Serif',Georgia,serif;font-size:1.2rem;color:var(--ink);line-height:1.5;letter-spacing:-0.005em}
+
+/* Connect */
+.connect-wrap{position:relative;z-index:1;max-width:1200px;margin:80px auto 0;padding:0 36px 100px}
+.connect{background:linear-gradient(135deg,var(--surface) 0%,var(--surface-2) 100%);border:1px solid var(--rule-strong);border-radius:24px;padding:64px 48px;position:relative;overflow:hidden}
+.connect::before{content:"";position:absolute;top:-40%;right:-20%;width:60%;height:160%;background:radial-gradient(ellipse,rgba(183,148,244,0.18),transparent 60%);pointer-events:none}
+.connect::after{content:"";position:absolute;bottom:-40%;left:-10%;width:50%;height:120%;background:radial-gradient(ellipse,rgba(232,132,156,0.12),transparent 60%);pointer-events:none}
+.connect-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.connect h2{margin:0 0 16px}
+.connect .quote{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--mute);line-height:1.6;max-width:42ch}
+.contact-list{display:flex;flex-direction:column;gap:14px}
+.contact-row{display:flex;align-items:center;gap:18px;background:var(--bg2);border:1px solid var(--rule);border-radius:14px;padding:18px 22px;text-decoration:none;color:var(--ink);transition:all 0.15s}
+.contact-row:hover{border-color:var(--accent);background:var(--bg)}
+.contact-row .ico{width:42px;height:42px;border-radius:12px;background:var(--accent-soft);color:var(--accent-warm);display:flex;align-items:center;justify-content:center;font-size:18px;border:1px solid rgba(183,148,244,0.25);flex-shrink:0}
+.contact-row .lbl{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--soft);text-transform:uppercase;letter-spacing:0.16em;margin-bottom:2px}
+.contact-row .val{font-size:15px;font-weight:500;color:var(--ink)}
+.contact-row .arrow{margin-left:auto;color:var(--mute);font-size:14px}
+
+/* Recognition */
+.recog-hero{background:linear-gradient(135deg,rgba(183,148,244,0.12) 0%,rgba(232,132,156,0.08) 100%);border:1px solid var(--accent);border-radius:18px;padding:28px 32px;display:flex;gap:24px;align-items:center;margin-bottom:36px;box-shadow:0 8px 30px rgba(183,148,244,0.12)}
+.recog-hero img{width:96px;height:96px;flex-shrink:0;filter:drop-shadow(0 6px 18px rgba(183,148,244,0.4))}
+.recog-hero .body .tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent-warm);text-transform:uppercase;letter-spacing:0.18em;margin-bottom:8px}
+.recog-hero .body h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:1.5rem;color:var(--ink);margin:0 0 6px;letter-spacing:-0.005em;line-height:1.2}
+.recog-hero .body p{font-size:14px;color:var(--mute);margin:0;line-height:1.55}
+.recog-sub{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:0.14em;margin:0 0 18px;display:flex;align-items:center;gap:10px}
+.recog-sub::before{content:"";width:18px;height:1px;background:var(--rule-strong)}
+.badge-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:32px}
+.badge-card{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:18px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;transition:all 0.2s}
+.badge-card:hover{border-color:var(--accent);background:var(--surface-2);transform:translateY(-2px)}
+.badge-card img{width:72px;height:72px;object-fit:contain}
+.badge-card .nm{font-size:11.5px;color:var(--ink);line-height:1.3;font-weight:500;min-height:30px}
+.badge-card .dt{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--soft);letter-spacing:0.06em}
+.cert-strip{background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:20px 24px;margin-bottom:32px}
+.cert-strip .ttl{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent-warm);text-transform:uppercase;letter-spacing:0.18em;margin-bottom:14px}
+.cert-strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.cert-strip li{background:var(--accent-soft);border:1px solid rgba(183,148,244,0.25);color:var(--ink);padding:8px 14px;border-radius:999px;font-size:13px;display:flex;align-items:center;gap:8px}
+.cert-strip li .yr{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent-warm);letter-spacing:0.06em}
+.legacy{background:transparent;border:1px dashed var(--rule-strong);border-radius:14px;padding:18px 22px}
+.legacy .ttl{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mute);text-transform:uppercase;letter-spacing:0.18em;margin-bottom:10px}
+.legacy ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:18px;font-size:13px;color:var(--mute)}
+.legacy ul li b{color:var(--ink);font-weight:500}
+.legacy ul li span{color:var(--soft);font-family:'JetBrains Mono',monospace;font-size:11px;margin-left:6px}
+
+/* Recommendations */
+.recs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rec-card{background:var(--surface);border:1px solid var(--rule);border-radius:18px;padding:30px;display:flex;flex-direction:column;gap:18px;transition:all 0.2s;position:relative}
+.rec-card:hover{border-color:var(--rule-strong);background:var(--surface-2);transform:translateY(-2px)}
+.rec-card .mark{font-family:'Instrument Serif',Georgia,serif;font-size:3.4rem;color:var(--accent);line-height:0.6;height:24px}
+.rec-card .quote{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:1.05rem;color:var(--ink);line-height:1.55;margin:0;flex:1;letter-spacing:-0.005em}
+.rec-card .who{display:flex;flex-direction:column;gap:2px;padding-top:14px;border-top:1px solid var(--rule)}
+.rec-card .who .nm{font-size:13px;color:var(--ink);font-weight:500}
+.rec-card .who .rl{font-size:12px;color:var(--mute);line-height:1.4}
+.rec-card .who .dt{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--soft);letter-spacing:0.06em;margin-top:4px}
+
+/* Footer / Colophon */
+footer{position:relative;z-index:1;border-top:1px solid var(--rule);padding:36px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--soft);letter-spacing:0.06em}
+footer span{color:var(--accent-warm)}
+
+@media(max-width:880px){
+  .badge-grid{grid-template-columns:repeat(2,1fr)}
+  .recs-grid{grid-template-columns:1fr}
+  .recog-hero{flex-direction:column;text-align:center;padding:24px}
+  .recog-hero img{width:80px;height:80px}
+  .hero{grid-template-columns:1fr;gap:48px;padding:48px 24px}
+  .card-stack{height:360px;max-width:340px;margin:0 auto}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  section{padding:60px 24px 24px}
+  .connect-wrap{padding:0 24px 60px}
+  .story-grid,.connect-inner{grid-template-columns:1fr;gap:32px}
+  .pillars{position:static}
+  .journey-grid{grid-template-columns:repeat(2,1fr)}
+  .work-grid,.impact-grid,.headed-grid{grid-template-columns:1fr}
+  .super-grid{grid-template-columns:1fr}
+  .connect{padding:40px 28px}
+  nav{padding:14px 18px}
+  nav ul{display:none}
+  nav .status{display:none}
+}
+
+/* ====== HORIZONTAL SCROLL LAYOUT ====== */
+html,body{height:100%;overflow:hidden}
+body{display:flex;flex-direction:column}
+nav{flex-shrink:0}
+.track{flex:1;display:flex;flex-direction:row;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--accent-soft) transparent}
+.track::-webkit-scrollbar{height:10px}
+.track::-webkit-scrollbar-track{background:transparent}
+.track::-webkit-scrollbar-thumb{background:var(--accent-soft);border-radius:999px;border:2px solid var(--bg)}
+.track::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+.track > *{flex:0 0 auto;width:clamp(760px,90vw,1180px);height:100%;max-width:none;margin:0;padding:64px 56px;overflow-y:auto;overflow-x:hidden;scroll-snap-align:start;scrollbar-width:thin;scrollbar-color:var(--rule-strong) transparent}
+.track > *::-webkit-scrollbar{width:6px}
+.track > *::-webkit-scrollbar-thumb{background:var(--rule-strong);border-radius:999px}
+.track > .hero{padding:48px 56px;display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center}
+.track > .connect-wrap{padding:64px 56px;background:transparent}
+.track > .connect-wrap .connect{padding:48px 40px;border-radius:20px}
+.track > footer{width:clamp(360px,30vw,460px);padding:64px 40px;display:flex;align-items:center;justify-content:center;border-top:none;border-left:1px solid var(--rule);text-align:center}
+.track section h2{margin-bottom:36px}
+/* slide-edge fade marker on the right of each slide */
+.track > *:not(:last-child){border-right:1px solid var(--rule);position:relative}
+.scroll-hint{position:fixed;bottom:22px;right:28px;z-index:20;background:var(--surface);border:1px solid var(--rule-strong);color:var(--mute);font-family:'JetBrains Mono',monospace;font-size:11px;padding:8px 14px;border-radius:999px;display:flex;align-items:center;gap:8px;backdrop-filter:blur(10px);opacity:0.9;transition:opacity 0.3s;pointer-events:none}
+.scroll-hint.hide{opacity:0}
+.scroll-hint .arrow{color:var(--accent-warm);font-size:14px;animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+
+@media(max-width:880px){
+  html,body{overflow:auto;height:auto}
+  body{display:block}
+  .track{display:block;overflow:visible;height:auto}
+  .track > *{width:auto;height:auto;padding:60px 24px;overflow:visible;border-right:none !important}
+  .track > .hero{display:grid;grid-template-columns:1fr;gap:48px;padding:48px 24px}
+  .track > footer{width:auto;border-left:none;border-top:1px solid var(--rule);padding:36px}
+  .scroll-hint{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">
+    <div class="av">CA</div>
+    <div class="name">Caryn Allen</div>
+  </div>
+  <ul>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#practice">Practice</a></li>
+    <li><a href="#superpowers">Superpowers</a></li>
+    <li><a href="#recognition">Recognition</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#praise">Praise</a></li>
+    <li><a href="#headed">What's Next</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+  <div class="status"><span class="pulse"></span>Open · FY26</div>
+</nav>
+
+<div class="track">
+
+<!-- HERO -->
+<header class="hero">
+  <div>
+    <div class="greet"><span class="wave">✦</span>Hi, I'm <b>Caryn</b>, (pronounced Care-in)</div>
+    <h1>I build the <em>systems</em> that make complexity feel manageable.</h1>
+    <p class="sub">Sr. Customer Success Account Manager at Microsoft. I run structured success programs, build trust with executives, and teach others to build their own AI operating systems.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="mailto:carynallen@microsoft.com">Say hello <span>→</span></a>
+      <a class="btn-ghost" href="#story">See my journey</a>
+    </div>
+  </div>
+  <div class="card-stack">
+    <div class="card c1"><div class="icon-circle">✦</div><div class="ttl">Build systems that work</div><div class="desc">Structure that reduces friction, for me, my team, and my customers.</div></div>
+    <div class="card c2"><div class="icon-circle">◐</div><div class="ttl">Bring people with you</div><div class="desc">The best workflows mean nothing if people can't use them.</div></div>
+    <div class="card c3"><div class="icon-circle">◇</div><div class="ttl">Scale what works</div><div class="desc">From one conversation to community-wide enablement.</div></div>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stat-row">
+  <div class="stats">
+    <div class="stat"><div class="num">19<span class="unit">yrs</span></div><div class="lbl">In tech</div></div>
+    <div class="stat"><div class="num">7</div><div class="lbl">Companies scaled</div></div>
+    <div class="stat"><div class="num">4</div><div class="lbl">Roles · Microsoft</div></div>
+    <div class="stat"><div class="num">∞</div><div class="lbl">Systems shipped</div></div>
+  </div>
+</div>
+
+<!-- STORY -->
+<section id="story">
+  <div class="section-eyebrow">Chapter One · My Story</div>
+  <h2>The thread that runs through <em>everything</em> I do.</h2>
+  <div class="story-grid">
+    <div class="story-prose">
+      <p class="lede">I've spent my career in tech, navigating growth, acquisitions, and constant change.</p>
+      <p>What I learned along the way: when the environment is chaotic, the people who thrive are the ones who build their own structure. So I did. I built systems for how I work, how I manage complexity, and how I show up for customers.</p>
+      <p>At Microsoft, I started teaching others to do the same, turning those workflows into repeatable frameworks that reduce friction and accelerate outcomes.</p>
+      <blockquote>I don't just adapt to complexity. I build systems that make it manageable, for myself, my team, and the customers I serve.</blockquote>
+      <p><strong>That's the thread.</strong> Three pillars hold it together: build systems that work, bring people with you, and scale what works.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar p1"><div class="glyph">✦</div><div><div class="t">Build systems that work</div><div class="d">Structure reduces friction for me, my team, and my customers.</div></div></div>
+      <div class="pillar p2"><div class="glyph">◐</div><div><div class="t">Bring people with you</div><div class="d">The best workflows mean nothing if people can't use them.</div></div></div>
+      <div class="pillar p3"><div class="glyph">◇</div><div><div class="t">Scale what works</div><div class="d">From one conversation to community-wide enablement.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="section-eyebrow">Chapter Two · My Journey</div>
+  <h2>Nineteen years, seven companies, one <em>through-line</em>.</h2>
+  <div class="journey-grid">
+    <div class="role"><div class="when">Jul '06 — Jan '11</div><div class="co">Payformance Corp</div><div class="title">Client Support Analyst → Sr. Systems Admin</div></div>
+    <div class="role"><div class="when">Jan '11 — May '12</div><div class="co">Taleo</div><div class="title">Support Analyst III</div></div>
+    <div class="role"><div class="when">Feb '13 — May '15</div><div class="co">Oracle</div><div class="title">Automation Program Mgr, Proactive Delivery</div></div>
+    <div class="role"><div class="when">Jun '15 — Jul '21</div><div class="co">SAP SuccessFactors</div><div class="title">Sr. Customer Success Manager</div></div>
+    <div class="role"><div class="when">Aug '21 — Jan '23</div><div class="co">TIBCO Cloud Success</div><div class="title">Sr. Lead Customer Success Manager</div></div>
+    <div class="role"><div class="when">Jul '23 — Apr '24</div><div class="co">ServiceTitan</div><div class="title">Strategic Customer Success Manager</div></div>
+    <div class="role now"><div class="when">Apr '24 — Present</div><div class="co">Microsoft</div><div class="title">Sr. Customer Success Account Manager</div></div>
+    <div class="role next"><div class="when">Next Chapter</div><div class="co">Principal CSAM</div><div class="title">or Program Management</div></div>
+  </div>
+</section>
+
+<!-- PRACTICE / WHAT I DO -->
+<section id="practice">
+  <div class="section-eyebrow">Chapter Three · Practice</div>
+  <h2>The strategic <em>bridge</em> between capability and outcome.</h2>
+  <p class="sub" style="margin:-32px 0 48px;max-width:60ch">As a Sr. CSAM, I drive adoption, manage customer health, and deliver measurable business outcomes at scale.</p>
+  <div class="work-grid">
+    <div class="work-card c1">
+      <div class="icon">✦</div>
+      <h3>Customer Health &amp; Adoption</h3>
+      <p>I monitor customer health signals, run proactive success programs, and intervene early to prevent churn, keeping accounts on a trajectory toward realized value.</p>
+      <div class="tag">Delivery · Portfolio</div>
+    </div>
+    <div class="work-card c2">
+      <div class="icon">◐</div>
+      <h3>Executive Relationships</h3>
+      <p>I operate as a trusted advisor to customer stakeholders, including C-suite. My relationships create access, to insight, to alignment, and to decisions that matter.</p>
+      <div class="tag">Engagement · Strategic</div>
+    </div>
+    <div class="work-card c3">
+      <div class="icon">◇</div>
+      <h3>Success Program Delivery</h3>
+      <p>I design and run structured success programs, Customer Health Reviews, deployment sprints, adoption workshops, that translate Microsoft capabilities into customer outcomes.</p>
+      <div class="tag">Programs · Outcomes</div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPERPOWERS -->
+<section id="superpowers">
+  <div class="section-eyebrow">Chapter Four · Superpowers</div>
+  <h2>Four strengths I bring to <em>every</em> account.</h2>
+  <div class="super-grid">
+    <div class="super-card">
+      <div class="num">01</div>
+      <div>
+        <h3>Customer Success Delivery</h3>
+        <p>I design and execute programs that move customers from onboarding to thriving; structured, outcome-focused, and built to last beyond the engagement.</p>
+      </div>
+    </div>
+    <div class="super-card">
+      <div class="num">02</div>
+      <div>
+        <h3>Stakeholder &amp; Exec Engagement</h3>
+        <p>I build relationships that create access, to information, to decisions, and to trust. I influence without authority and show up as a strategic partner.</p>
+      </div>
+    </div>
+    <div class="super-card">
+      <div class="num">03</div>
+      <div>
+        <h3>Coaching &amp; Enablement at Scale</h3>
+        <p>I invest in others' growth through peer mentoring, CSAM community leadership, and knowledge-sharing programs, energized by helping people unlock their potential.</p>
+      </div>
+    </div>
+    <div class="super-card">
+      <div class="num">04</div>
+      <div>
+        <h3>AI Operating System Design</h3>
+        <p>I don't just use Copilot, I've built a personal AI operating system and teach others to do the same. As an Innovate Lead, I translate AI capability into human-centered, repeatable workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOGNITION -->
+<section id="recognition">
+  <div class="section-eyebrow">Chapter Five · Recognition</div>
+  <h2>Earned <em>credentials</em>, hard-won awards, and a few wins along the way.</h2>
+
+  <div class="recog-hero">
+    <img src="https://images.credly.com/images/a1285ab3-4cc3-47b0-a41c-e0104dfb8156/blob" alt="Microsoft Global Hackathon 2025 Executive Challenge Winner">
+    <div class="body">
+      <div class="tag">★ Featured · October 2025</div>
+      <h3>Microsoft Global Hackathon 2025 · Executive Challenge Winner</h3>
+      <p>Selected from across Microsoft for an executive-judged solution. Issued by The Microsoft Garage.</p>
+    </div>
+  </div>
+
+  <div class="recog-sub">Microsoft Certifications</div>
+  <div class="cert-strip">
+    <div class="ttl">Microsoft Learn · Verified</div>
+    <ul>
+      <li>Microsoft Certified: AI Transformation Leader <span class="yr">FEB 2026</span></li>
+      <li>Microsoft Certified: AI Business Professional <span class="yr">FEB 2026</span></li>
+    </ul>
+  </div>
+
+  <div class="recog-sub">Credly Badges · Microsoft</div>
+  <div class="badge-grid">
+    <div class="badge-card">
+      <img src="https://images.credly.com/images/58cc986c-f740-4a54-bf27-0273bb1e0d7f/blob" alt="Copilot Agent Builder | Agent Launchpad">
+      <div class="nm">Copilot Agent Builder · Agent Launchpad</div>
+      <div class="dt">MAY 2026</div>
+    </div>
+    <div class="badge-card">
+      <img src="https://images.credly.com/images/2f9f3ce2-894c-4315-8510-d89e26d89dfb/blob" alt="FY26 Q3 AI Accelerator">
+      <div class="nm">FY26 Q3 AI Accelerator</div>
+      <div class="dt">APR 2026</div>
+    </div>
+    <div class="badge-card">
+      <img src="https://images.credly.com/images/4a6c9bb5-1617-46ea-ac20-e093146752fa/blob" alt="FY26 H1 AI Accelerator">
+      <div class="nm">FY26 H1 AI Accelerator</div>
+      <div class="dt">DEC 2025</div>
+    </div>
+    <div class="badge-card">
+      <img src="https://images.credly.com/images/e6332bcf-17aa-4550-9884-6fd61c9f6de8/blob" alt="Copilot Expo | FY25 Participant">
+      <div class="nm">Copilot Expo · FY25</div>
+      <div class="dt">OCT 2025</div>
+    </div>
+    <div class="badge-card">
+      <img src="https://images.credly.com/images/6ea270a1-4231-49f8-8b1d-344a0bc95a2a/blob" alt="Copilot Champ | Tier 3 Enablement Advocate">
+      <div class="nm">Copilot Champ · Tier 3 Advocate</div>
+      <div class="dt">SEP 2025</div>
+    </div>
+    <div class="badge-card">
+      <img src="https://images.credly.com/images/bc925f6a-373d-4472-96fe-a2d59e9377b5/blob" alt="Copilot Champ | Tier 2 Enablement Advocate">
+      <div class="nm">Copilot Champ · Tier 2 Advocate</div>
+      <div class="dt">SEP 2025</div>
+    </div>
+    <div class="badge-card">
+      <img src="https://images.credly.com/images/1cbded95-7e69-430e-9794-08c4ba6de6f3/blob" alt="Copilot Champ | Tier 1 Enablement Advocate">
+      <div class="nm">Copilot Champ · Tier 1 Advocate</div>
+      <div class="dt">SEP 2025</div>
+    </div>
+    <div class="badge-card">
+      <img src="https://images.credly.com/images/a02f31d1-c478-437f-977b-f430ad84dd33/blob" alt="SkillUp AI: Agent Speed Skills">
+      <div class="nm">SkillUp AI · Agent Speed Skills</div>
+      <div class="dt">SEP 2025</div>
+    </div>
+    <div class="badge-card">
+      <img src="https://images.credly.com/images/55cec2cd-579f-413d-bf95-7c3ed0e18d95/image.png" alt="Microsoft AI Navigator">
+      <div class="nm">Microsoft AI Navigator</div>
+      <div class="dt">APR 2025</div>
+    </div>
+    <div class="badge-card">
+      <img src="https://images.credly.com/images/6d8de9b0-9313-40bc-93fd-9d0adb25faa3/image.png" alt="Copilot Champs | Training Achievement">
+      <div class="nm">Copilot Champs · Training</div>
+      <div class="dt">JUL 2024</div>
+    </div>
+  </div>
+
+  <div class="legacy">
+    <div class="ttl">Earlier Career · Honors & Awards</div>
+    <ul>
+      <li><b>Catalyst 2019–2021</b><span>SAP</span></li>
+      <li><b>Customer Success Award</b><span>SAP · 2018</span></li>
+      <li><b>Pacesetter Award · 3x</b><span>Oracle · 2014–2015</span></li>
+      <li><b>Team Excellence Award</b><span>Oracle · 2014</span></li>
+      <li><b>Outstanding Achievement</b><span>Taleo · 2011</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="section-eyebrow">Chapter Six · Impact</div>
+  <h2>A few <em>highlights</em> from my work at Microsoft.</h2>
+  <div class="impact-grid">
+    <div class="impact-card">
+      <div class="tag">Customer Win</div>
+      <h3>Stabilized an at-risk portfolio through early intervention.</h3>
+      <p>Identified risk signals across multiple accounts before they escalated. Redesigned success plans around executive priorities, restoring confidence and protecting renewal outcomes.</p>
+    </div>
+    <div class="impact-card">
+      <div class="tag">Relationship Built</div>
+      <h3>The connective tissue between Microsoft field and Copilot adoption.</h3>
+      <p>Built trusted lanes across CSAM, CSU, ATU, and specialist roles to translate field signal into Copilot motion, and Copilot capability back into account strategy.</p>
+    </div>
+    <div class="impact-card">
+      <div class="tag">Something I Built</div>
+      <h3>Turned a personal system into a scalable program.</h3>
+      <p>Designed and co-facilitated the "Build Your Own AI Operating System" workshop series. What started as my workflow for managing cognitive load became a workshop, a toolkit, and a community, presented at Neurodiversity Celebration Week and now expanding across the CSAM organization.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRAISE / RECOMMENDATIONS -->
+<section id="praise">
+  <div class="section-eyebrow">Chapter Seven · Praise</div>
+  <h2>What <em>colleagues</em> have said.</h2>
+  <div class="recs-grid">
+    <div class="rec-card">
+      <div class="mark">"</div>
+      <p class="quote">Caryn is a continuous improver. She is always finding ways to improve her processes, the team's processes, and our customer experience. She is a trusted advisor to our customers and has the credibility to push back when needed.</p>
+      <div class="who">
+        <div class="nm">Leslie Ballard</div>
+        <div class="rl">Teammate · SAP SuccessFactors</div>
+        <div class="dt">JUL 2021</div>
+      </div>
+    </div>
+    <div class="rec-card">
+      <div class="mark">"</div>
+      <p class="quote">Caryn's work ethic is second to none. She ramped quickly on a diverse set of solutions and consistently delivered for customers, no matter the complexity of the request.</p>
+      <div class="who">
+        <div class="nm">Kevin Imm</div>
+        <div class="rl">Collaborator · TIBCO / TeamViewer</div>
+        <div class="dt">JAN 2023</div>
+      </div>
+    </div>
+    <div class="rec-card">
+      <div class="mark">"</div>
+      <p class="quote">Detail-oriented and diligent. Caryn brings the kind of rigor that makes the team better and the customer outcomes stronger.</p>
+      <div class="who">
+        <div class="nm">Jennifer Pryor</div>
+        <div class="rl">Senior · Payformance</div>
+        <div class="dt">OCT 2010</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE I'M HEADED -->
+<section id="headed">
+  <div class="section-eyebrow">Chapter Eight · What's Next</div>
+  <h2>My next chapter: <em>Principal CSAM</em> or Program Leadership.</h2>
+  <div class="headed-grid">
+    <div class="headed-card">
+      <div class="step">01</div>
+      <h3>Portfolio Leadership at Principal Scope</h3>
+      <p>Complex accounts, exec relationships, cross-product strategy. I'm ready to operate at the level where the decisions are harder and the stakes are higher.</p>
+    </div>
+    <div class="headed-card">
+      <div class="step">02</div>
+      <h3>Systems and Programs That Outlast Me</h3>
+      <p>The workshops, frameworks, and community infrastructure I build don't stop when I leave the room. That's the kind of enablement I want to own and scale.</p>
+    </div>
+    <div class="headed-card">
+      <div class="step">03</div>
+      <h3>AI Motions That Change How CS Works</h3>
+      <p>I'm not interested in one-off Copilot demos. I want to design the operating model, the rhythms, the workflows, the adoption patterns, that make AI stick across a CS org.</p>
+    </div>
+  </div>
+  <div class="seeking">
+    <div class="glyph">✦</div>
+    <div>
+      <div class="ttl">What I'm Seeking</div>
+      <div class="txt">Principal-level scope where I can build programs, influence CS strategy, and create enablement that scales, as a senior IC who's already doing it.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<div class="connect-wrap" id="connect">
+  <div class="connect">
+    <div class="connect-inner">
+      <div>
+        <div class="section-eyebrow">Chapter Seven · Connect</div>
+        <h2>Let's <em>connect</em>.</h2>
+        <p class="quote">"I'm always open to conversations about customer success, career growth, and what's next. Reach out, I'd love to connect."</p>
+      </div>
+      <div class="contact-list">
+        <a class="contact-row" href="mailto:carynallen@microsoft.com">
+          <div class="ico">✉</div>
+          <div><div class="lbl">Email</div><div class="val">carynallen@microsoft.com</div></div>
+          <div class="arrow">→</div>
+        </a>
+        <a class="contact-row" href="msteams:/l/chat/0/0?users=carynallen@microsoft.com">
+          <div class="ico">◐</div>
+          <div><div class="lbl">Teams</div><div class="val">Caryn Allen</div></div>
+          <div class="arrow">→</div>
+        </a>
+        <a class="contact-row" href="https://aka.ms/[YourLink]">
+          <div class="ico">◇</div>
+          <div><div class="lbl">aka.ms</div><div class="val">aka.ms/[YourLink]</div></div>
+          <div class="arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Caryn Allen · Sr. Customer Success Account Manager · Microsoft · <span>FY26</span>
+</footer>
+
+</div><!-- /.track -->
+
+<div class="scroll-hint" id="scrollHint"><span>scroll</span><span class="arrow">→</span></div>
+
+<script>
+const track = document.querySelector('.track');
+const navLinks = document.querySelectorAll('nav a');
+
+// Nav click: horizontal scroll to target
+navLinks.forEach(a => a.addEventListener('click', e => {
+  const id = a.getAttribute('href');
+  if(id && id.startsWith('#')){
+    const el = document.querySelector(id);
+    if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'}); }
+  }
+}));
+
+// Translate vertical wheel to horizontal track scroll.
+// If the slide under the cursor is vertically scrollable AND not at boundary
+// in the wheel direction, let the default vertical scroll happen.
+track.addEventListener('wheel', (e) => {
+  if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return; // trackpad horizontal — let it pass through
+  const slide = e.target.closest('.track > *');
+  if (slide && slide.scrollHeight - slide.clientHeight > 2) {
+    const atTop = slide.scrollTop <= 0;
+    const atBot = slide.scrollTop + slide.clientHeight >= slide.scrollHeight - 1;
+    if ((e.deltaY < 0 && !atTop) || (e.deltaY > 0 && !atBot)) return;
+  }
+  e.preventDefault();
+  track.scrollLeft += e.deltaY;
+}, { passive: false });
+
+// Keyboard nav
+window.addEventListener('keydown', (e) => {
+  const w = window.innerWidth * 0.85;
+  if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); track.scrollBy({left: w, behavior:'smooth'}); }
+  if (e.key === 'ArrowLeft'  || e.key === 'PageUp')   { e.preventDefault(); track.scrollBy({left: -w, behavior:'smooth'}); }
+  if (e.key === 'Home') { e.preventDefault(); track.scrollTo({left: 0, behavior:'smooth'}); }
+  if (e.key === 'End')  { e.preventDefault(); track.scrollTo({left: track.scrollWidth, behavior:'smooth'}); }
+});
+
+// Active nav state — horizontal-aware
+const slides = document.querySelectorAll('.track > *');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if(en.isIntersecting){
+      const id = en.target.id;
+      if(!id) return;
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+    }
+  });
+}, {root: track, rootMargin:'0px -45% 0px -45%', threshold: 0});
+slides.forEach(s => io.observe(s));
+
+// Hide scroll hint after first interaction
+const hint = document.getElementById('scrollHint');
+const dismiss = () => hint.classList.add('hide');
+track.addEventListener('scroll', dismiss, {once:true});
+window.addEventListener('keydown', dismiss, {once:true});
+setTimeout(dismiss, 6000);
+</script>
+</body>
+</html>
