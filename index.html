@@ -133,7 +133,7 @@ h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(
 .super-card p{font-size:14px;color:var(--mute);line-height:1.65;margin:0}
 
 /* Impact */
-.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:18px}
 .impact-card{background:var(--surface);border:1px solid var(--rule);border-radius:18px;padding:30px;display:flex;flex-direction:column;gap:14px;transition:all 0.2s;position:relative;overflow:hidden}
 .impact-card:hover{transform:translateY(-3px);border-color:var(--rule-strong);background:var(--surface-2)}
 .impact-card .tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent-warm);text-transform:uppercase;letter-spacing:0.18em;display:flex;align-items:center;gap:8px}
@@ -174,6 +174,14 @@ h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(
 .recog-hero .body .tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent-warm);text-transform:uppercase;letter-spacing:0.18em;margin-bottom:8px}
 .recog-hero .body h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:1.5rem;color:var(--ink);margin:0 0 6px;letter-spacing:-0.005em;line-height:1.2}
 .recog-hero .body p{font-size:14px;color:var(--mute);margin:0;line-height:1.55}
+.award-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px;margin-bottom:32px}
+.award-card{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:22px 24px;display:flex;gap:18px;align-items:center;transition:all 0.2s}
+.award-card:hover{border-color:var(--accent);background:var(--surface-2);transform:translateY(-2px)}
+.award-card img{width:72px;height:72px;flex-shrink:0}
+.award-card .medal{width:72px;height:72px;flex-shrink:0;border-radius:50%;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--accent);background:var(--accent-soft)}
+.award-card .nm{font-family:'Instrument Serif',Georgia,serif;font-size:1.15rem;color:var(--ink);line-height:1.25;margin-bottom:6px}
+.award-card .meta{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent-warm);text-transform:uppercase;letter-spacing:0.14em}
+.award-card .desc{font-size:13px;color:var(--mute);line-height:1.5;margin-top:8px}
 .recog-sub{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:0.14em;margin:0 0 18px;display:flex;align-items:center;gap:10px}
 .recog-sub::before{content:"";width:18px;height:1px;background:var(--rule-strong)}
 .badge-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:32px}
@@ -212,6 +220,7 @@ footer span{color:var(--accent-warm)}
   .badge-grid{grid-template-columns:repeat(2,1fr)}
   .recs-grid{grid-template-columns:1fr}
   .recog-hero{flex-direction:column;text-align:center;padding:24px}
+  .award-grid{grid-template-columns:1fr}
   .recog-hero img{width:80px;height:80px}
   .hero{grid-template-columns:1fr;gap:48px;padding:48px 24px}
   .card-stack{height:360px;max-width:340px;margin:0 auto}
@@ -238,11 +247,11 @@ nav{flex-shrink:0}
 .track::-webkit-scrollbar-track{background:var(--surface);border-top:1px solid var(--rule);box-shadow:inset 0 1px 4px rgba(0,0,0,0.3)}
 .track::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--accent-warm),var(--accent));border-radius:999px;border:3px solid var(--surface);min-width:80px;box-shadow:0 0 12px var(--accent-glow)}
 .track::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#dabaff,var(--accent-warm));box-shadow:0 0 16px var(--accent-glow)}
-.track > *{flex:0 0 auto;width:clamp(760px,90vw,1180px);height:100%;max-width:none;margin:0;padding:48px 56px 28px;overflow-y:auto;overflow-x:hidden;scroll-snap-align:start;scrollbar-width:thin;scrollbar-color:var(--rule-strong) transparent;display:flex;flex-direction:column;justify-content:center}
+.track > *{flex:0 0 auto;width:clamp(760px,90vw,1180px);height:100%;max-width:none;margin:0;padding:48px 56px 28px;overflow-y:auto;overflow-x:hidden;scroll-snap-align:start;scrollbar-width:thin;scrollbar-color:var(--rule-strong) transparent;display:flex;flex-direction:column;justify-content:center;justify-content:safe center}
 .track > *::-webkit-scrollbar{width:6px}
 .track > *::-webkit-scrollbar-thumb{background:var(--rule-strong);border-radius:999px}
 .track > .hero{padding:48px 56px;display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center}
-.track > .connect-wrap{padding:48px 56px;background:transparent;justify-content:center}
+.track > .connect-wrap{padding:48px 56px;background:transparent;justify-content:center;justify-content:safe center}
 .track > .connect-wrap .connect{padding:48px 40px;border-radius:20px}
 .track > footer{width:clamp(360px,30vw,460px);padding:48px 40px;display:flex;align-items:center;justify-content:center;border-top:none;border-left:1px solid var(--rule);text-align:center}
 .track section h2{margin-bottom:32px}
@@ -283,11 +292,12 @@ nav{flex-shrink:0}
     <li><a href="#superpowers">Superpowers</a></li>
     <li><a href="#recognition">Recognition</a></li>
     <li><a href="#impact">Impact</a></li>
+    <li><a href="#inclusion">Accessibility</a></li>
     <li><a href="#praise">Praise</a></li>
     <li><a href="#headed">What's Next</a></li>
     <li><a href="#connect">Connect</a></li>
   </ul>
-  <div class="status"><span class="pulse"></span>Open · FY26</div>
+  <div class="status"><span class="pulse"></span>Open · FY27</div>
 </nav>
 
 <div class="track">
@@ -433,6 +443,26 @@ nav{flex-shrink:0}
     </div>
   </div>
 
+  <div class="recog-sub">Awards</div>
+  <div class="award-grid">
+    <div class="award-card">
+      <img src="assets/100-attainment-2026.png" alt="Microsoft 100% Attainment 2026 award medallion">
+      <div>
+        <div class="nm">100% Attainment Award</div>
+        <div class="meta">Worldwide Incentive · 2026</div>
+        <div class="desc">Awarded for reaching full capped weighted attainment across the fiscal year.</div>
+      </div>
+    </div>
+    <div class="award-card">
+      <div class="medal">✦</div>
+      <div>
+        <div class="nm">Living Our Culture Award</div>
+        <div class="meta">Americas H1 · Account Transition · FY26 Q1</div>
+        <div class="desc">Red Carpet Transition Enablement — built the briefing and handoff system that gives incoming and outgoing teams continuity and clarity.</div>
+      </div>
+    </div>
+  </div>
+
   <div class="recog-sub">Microsoft Certifications</div>
   <div class="cert-strip">
     <div class="ttl">Microsoft Learn · Verified</div>
@@ -528,12 +558,51 @@ nav{flex-shrink:0}
       <h3>Turned a personal system into a scalable program.</h3>
       <p>Designed and co-facilitated the "Build Your Own AI Operating System" workshop series. What started as my workflow for managing cognitive load became a workshop, a toolkit, and a community, presented at Neurodiversity Celebration Week and now expanding across the CSAM organization.</p>
     </div>
+    <div class="impact-card">
+      <div class="tag">Something I Built</div>
+      <h3>Shipped agentic tooling my peers actually run.</h3>
+      <p>Built and distributed a working library of AI agents and skills for customer success operations, covering reporting, delivery tracking, and account planning. Not demos: tools other CSAMs run on their own books, supported through office hours and a peer community so the capability outlives any one workflow.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESSIBILITY & INCLUSION -->
+<section id="inclusion">
+  <div class="section-eyebrow">Chapter Seven · Accessibility</div>
+  <h2>Designing for how people <em>actually</em> work.</h2>
+  <p class="sub" style="margin:-32px 0 48px;max-width:60ch">The systems I build started as accommodations. It turns out that what makes work possible for some people makes work better for everyone.</p>
+  <div class="work-grid">
+    <div class="work-card c1">
+      <div class="icon">✦</div>
+      <h3>Built From Lived Experience</h3>
+      <p>My workflows weren't designed in the abstract. They came from finding ways to manage cognitive load and complexity in environments that assume one way of working. That origin is the reason they're practical, and the reason I share them openly rather than presenting them as polish.</p>
+      <div class="tag">Origin · Practice</div>
+    </div>
+    <div class="work-card c2">
+      <div class="icon">◐</div>
+      <h3>Sharing Across Microsoft</h3>
+      <p>I'm active in the neurodiversity community at Microsoft, presenting at Neurodiversity Celebration Week and turning my own operating system into workshops, toolkits, and peer sessions others can take and adapt. Enablement that names the accessibility angle out loud, instead of quietly designing around it.</p>
+      <div class="tag">Community · Enablement</div>
+    </div>
+    <div class="work-card c3">
+      <div class="icon">◇</div>
+      <h3>Bringing It To Customers</h3>
+      <p>Accessibility isn't a separate conversation from adoption; it's the same conversation. I bring inclusive-design thinking into how customers roll out Microsoft technology, so the tools land for their whole workforce rather than the average user.</p>
+      <div class="tag">Customers · Adoption</div>
+    </div>
+  </div>
+  <div class="seeking" style="margin-top:24px">
+    <div class="glyph">◈</div>
+    <div>
+      <div class="ttl">Why This Is In My Story</div>
+      <div class="txt">Accessibility work is often done quietly, which is exactly why it stays invisible. I put it here on purpose: the structure I build for myself is the same structure I hand to my team and my customers, and saying that plainly is part of the work.</div>
+    </div>
   </div>
 </section>
 
 <!-- PRAISE / RECOMMENDATIONS -->
 <section id="praise">
-  <div class="section-eyebrow">Chapter Seven · Praise</div>
+  <div class="section-eyebrow">Chapter Eight · Praise</div>
   <h2>What <em>colleagues</em> have said.</h2>
   <div class="recs-grid">
     <div class="rec-card">
@@ -568,7 +637,7 @@ nav{flex-shrink:0}
 
 <!-- WHERE I'M HEADED -->
 <section id="headed">
-  <div class="section-eyebrow">Chapter Eight · What's Next</div>
+  <div class="section-eyebrow">Chapter Nine · What's Next</div>
   <h2>My next chapter: <em>Principal CSAM</em> or Program Leadership.</h2>
   <div class="headed-grid">
     <div class="headed-card">
@@ -601,7 +670,7 @@ nav{flex-shrink:0}
   <div class="connect">
     <div class="connect-inner">
       <div>
-        <div class="section-eyebrow">Chapter Seven · Connect</div>
+        <div class="section-eyebrow">Chapter Ten · Connect</div>
         <h2>Let's <em>connect</em>.</h2>
         <p class="quote">"I'm always open to conversations about customer success, career growth, and what's next. Reach out, I'd love to connect."</p>
       </div>
@@ -627,7 +696,7 @@ nav{flex-shrink:0}
 </div>
 
 <footer>
-  Caryn Allen · Sr. Customer Success Account Manager · Microsoft · <span>FY26-27</span>
+  Caryn Allen · Sr. Customer Success Account Manager · Microsoft · <span>FY27</span>
 </footer>
 
 </div><!-- /.track -->
